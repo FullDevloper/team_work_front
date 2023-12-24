@@ -1,7 +1,8 @@
 import { useEffect, useRef, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import Peer from "simple-peer";
-import { ChatContainer, WhatsappHome } from "../components/Chat";
+import { ChatContainer } from "../components/Chat";
+// import WhatsappHome from "../components/Chat/Welcome/WhatsappHome";
 import { Sidebar } from "../components/sidebar";
 import SocketContext from "../context/SocketContext";
 import {
@@ -172,7 +173,9 @@ function Home({ socket }) {
               typing={typing}
             />
           ) : (
-            <WhatsappHome />
+            <>
+            "WhatsappHome"
+            </>
           )}
         </div>
       </div>

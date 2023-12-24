@@ -1,6 +1,6 @@
 import { Logo } from "../../../svg";
 
-export default function WhatsappHome() {
+const  WhatsappHome=()=> {
   return (
     <div className="h-full w-full dark:bg-dark_bg_4 select-none border-l dark:border-l-dark_border_2 border-b-[6px] border-b-green_2">
       {/*Container*/}
@@ -23,3 +23,5 @@ export default function WhatsappHome() {
     </div>
   );
 }
+
+export default WhatsappHome

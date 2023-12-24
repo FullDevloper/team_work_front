@@ -1,8 +1,9 @@
 import { createAsyncThunk, createSlice } from "@reduxjs/toolkit";
 import axios from "axios";
 
-const CONVERSATION_ENDPOINT = `${process.env.REACT_APP_API_ENDPOINT}/conversation`;
-const MESSAGE_ENDPOINT = `${process.env.REACT_APP_API_ENDPOINT}/message`;
+const conversation_endpoint=`http://localhost:8000/api/v1/conversation`
+const MESSAGE_ENDPOINT=`http://localhost:8000/api/v1/message`
+
 
 const initialState = {
   status: "",
@@ -19,7 +20,7 @@ export const getConversations = createAsyncThunk(
   "conervsation/all",
   async (token, { rejectWithValue }) => {
     try {
-      const { data } = await axios.get(CONVERSATION_ENDPOINT, {
+      const { data } = await axios.get(conversation_endpoint, {
         headers: {
           Authorization: `Bearer ${token}`,
         },
@@ -36,7 +37,7 @@ export const open_create_conversation = createAsyncThunk(
     const { token, receiver_id, isGroup } = values;
     try {
       const { data } = await axios.post(
-        CONVERSATION_ENDPOINT,
+        conversation_endpoint,
         { receiver_id, isGroup },
         {
           headers: {
@@ -96,7 +97,7 @@ export const createGroupConversation = createAsyncThunk(
     const { token, name, users } = values;
     try {
       const { data } = await axios.post(
-        `${CONVERSATION_ENDPOINT}/group`,
+        `${conversation_endpoint}/group`,
         { name, users },
         {
           headers: {

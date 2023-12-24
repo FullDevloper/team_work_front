@@ -12,8 +12,9 @@ import SocketContext from "./context/SocketContext";
 import Home from "./pages/home";
 import Login from "./pages/login";
 import Register from "./pages/register";
+const React_APP_API_ENDPOINT="http://localhost:8000/api/v1"
 //socket io
-const socket = io(process.env.REACT_APP_API_ENDPOINT.split("/api/v1")[0]);
+const socket = io(React_APP_API_ENDPOINT.split("/api/v1")[0]);
 
 function App() {
   //const [connected, setConnected] = useState(false);
